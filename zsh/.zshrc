@@ -35,7 +35,7 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 # for doom emacs
-export path="$home/.config/emacs/bin:$path"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
