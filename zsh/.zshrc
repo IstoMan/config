@@ -66,6 +66,7 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nbsp="$EDITOR ~/.config/bspwm/bspwmrc"
 alias nsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
+alias npicom="$EDITOR ~/.config/picom/picom.conf"
 
 
 
