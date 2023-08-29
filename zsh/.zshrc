@@ -69,6 +69,7 @@ alias nsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
 
 # Some useful utilitie
 alias v="$EDITOR"
+alias emacs="emacsclient -c -a 'emacs'"
 alias ll="exa -alh"
 alias ls='exa'
 alias cat='bat'
