@@ -60,6 +60,7 @@ alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nbsp="$EDITOR ~/.config/bspwm/bspwmrc"
 alias nsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
 alias npicom="$EDITOR ~/.config/picom/picom.conf"
+alias ni3="$EDITOR ~/.config/i3/config"
 
 
 
