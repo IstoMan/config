@@ -1,0 +1,26 @@
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+# For quick edits
+alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
+alias nbsp="$EDITOR ~/.config/bspwm/bspwmrc"
+alias nsx="$EDITOR ~/.config/sxhkd/sxhkdrc"
+alias npicom="$EDITOR ~/.config/picom/picom.conf"
+alias ni3="$EDITOR ~/.config/i3/config"
+
+
+
+
+
+
+
+
+# Some useful utilitie
+alias v="$EDITOR"
+alias emacs="emacsclient -c -a 'emacs'"
+alias ll="exa -alh"
+alias ls='exa'
+alias cat='bat'
+alias rm="trash -v"
+alias r="ranger"
+alias p="sudo pacman"
