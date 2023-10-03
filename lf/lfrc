@@ -195,6 +195,8 @@ map gt cd ~/.local/share/Trash/files/
 map gd cd ~/Downloads
 map gp cd ~/Pictures/
 map gm cd ~/Music
+map gc cd ~/.config/
+map gr cd ~/Repos/
 
 # Trashing
 map DD trash
