@@ -178,7 +178,6 @@ cmd restore_trash ${{
 # Remove Default Bindings
 map d
 map m
-map m
 map o
 map "'"
 map '"'
