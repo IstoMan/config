@@ -180,7 +180,6 @@ map d
 map m
 map m
 map o
-map n
 map "'"
 map '"'
 map d
@@ -209,3 +208,6 @@ map mf mkfile
 map md mkdir
 map ch chmod
 map C clear
+map I :rename; cmd-home
+map A :rename; cmd-end
+
