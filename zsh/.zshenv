@@ -1,3 +1,5 @@
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 export LF_ICONS="\
 tw=:\
 st=:\
