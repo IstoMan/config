@@ -30,7 +30,7 @@ gaps outer 5
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/GruvBoxArchWal.png fill
+output * bg ~/Pictures/wallpaper_world_map_gruvbox/World_Map_4k_Gruvbox_Dark.png fill
 #
 # Example configuration:
 #
@@ -77,7 +77,7 @@ set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Gruvbox-Dark-B'
-    gsettings set $gnome-schema icon-theme 'Gruvbox-Dark-B'
+    gsettings set $gnome-schema icon-theme 'Gruvbox-plus-icon-MOD'
     gsettings set $gnome-schema cursor-theme 'WhiteSur-cursors'
 }
 
