@@ -76,12 +76,21 @@ input "type:keyboard" xkb_options caps:swapescape
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'WhiteSur-Dark'
-    gsettings set $gnome-schema icon-theme 'WhiteSur-Dark'
+    gsettings set $gnome-schema gtk-theme 'Gruvbox-Dark-B'
+    gsettings set $gnome-schema icon-theme 'Gruvbox-Dark-B'
     gsettings set $gnome-schema cursor-theme 'WhiteSur-cursors'
 }
 
-### Theme configuration 
+# class                 border  backgr. text    indicator child_border
+client.focused          #d65d0e #d65d0e #1a1826 #fe8019   #d65d0e
+client.focused_inactive #ebdbb2 #5f676a #ffffff #ebdbb2   #ebdbb2
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #cc241d #900000 #ffffff #cc241d   #cc241d
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+### Window Rules 
 for_window [app_id="io.bassi.Amberol"] floating enabled
 for_window [app_id="org.gnome.Calculator"] floating enabled
 
