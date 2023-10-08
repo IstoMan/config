@@ -272,5 +272,6 @@ exec --no-startup-id autotiling
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id swaync 
 exec --no-startup-id wl-paste --watch cliphist store
+exec --no-startup-id /usr/bin/emacs --daemon
 
 include /etc/sway/config.d/*
