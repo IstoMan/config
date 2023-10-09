@@ -19,7 +19,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 #
 ##### connection settings #####
 #
@@ -411,7 +411,7 @@ browser_display_mode = columns
 #
 #cyclic_scrolling = no
 #
-#lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+lyrics_fetchers = musixmatch, genius, internet, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, azlyrics
 #
 #follow_now_playing_lyrics = no
 #
