@@ -1,5 +1,5 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export XDG_CONFIG_HOME="/home/$USER/.config/"
+export XDG_CONFIG_HOME="/home/$USER/.config"
 
 export LF_ICONS="\
 tw=:\
