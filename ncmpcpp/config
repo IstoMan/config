@@ -325,7 +325,7 @@ visualizer_look = "+|"
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = songinfo
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -415,7 +415,7 @@ lyrics_fetchers = musixmatch, genius, internet, sing365, metrolyrics, justsomely
 #
 #follow_now_playing_lyrics = no
 #
-#fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
 #store_lyrics_in_song_dir = no
 #
