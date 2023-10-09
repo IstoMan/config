@@ -325,7 +325,7 @@ visualizer_look = "+|"
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = songinfo
+execute_on_song_change = ~/.config/ncmpcpp/songinfo
 #
 ##
 ## Note: Custom command that will be executed each time player state
