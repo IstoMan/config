@@ -1,5 +1,10 @@
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME='qt5ct'
 export XDG_CONFIG_HOME="/home/$USER/.config"
+export EDITOR='nvim'
+export VISUAL='nvim'
+export MANPAGER='nvim +Man!'
+export TERM='kitty'
+export BROWSER='librewolf'
 
 export LF_ICONS="\
 tw=:\

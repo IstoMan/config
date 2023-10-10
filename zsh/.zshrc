@@ -65,10 +65,6 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 
-# To make nvim default editor
-export EDITOR='nvim'
-export VISUAL='nvim'
-export MANPAGER='nvim +Man!'
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 # To make scripting easy
