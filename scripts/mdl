@@ -5,7 +5,7 @@
   read -p "Choose a directory (1 for Music, 2 for Videos): " choice
   if [ "$choice" -eq 1 ]; then
   directory="$HOME/Music"
-  yt-dlp -x -f bestaudio[ext=m4a] --add-metadata --embed-thumbnail --convert-thumb png --ppa "ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' -o "$directory/%(title)s.%(ext)s" "$url"
+  yt-dlp -x -f bestaudio[ext=m4a] --add-metadata --embed-thumbnail --convert-thumb png --ppa "ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' -o "$directory/%(title)s.%(ext)s" "$url" && mpc update
   elif [ "$choice" -eq 2 ]; then
   directory="$HOME/Videos/YT"
   yt-dlp -f 'bestvideo[ext=mkv]+bestaudio[ext=mka]/best[ext=mkv]/best' --embed-thumbnail --merge-output-format mkv --write-sub --sub-lang en --convert-subs srt --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' -o "$directory/%(title)s/%(title)s.%(ext)s" "$url"
