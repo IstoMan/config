@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env bash
 
 music_dir="$HOME/Music"
 previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
