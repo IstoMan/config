@@ -63,9 +63,6 @@ bindkey -s '^o' 'lfcd\n'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 # To make scripting easy
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
