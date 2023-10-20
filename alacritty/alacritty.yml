@@ -41,12 +41,10 @@ cursor:
 live_config_reload: true
 
 ## Shell
-#shell:
-#  program: /bin/zsh
-#  args:
-#    - --login
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+shell:
+  program: /bin/zsh
+  args:
+    - --login
 # Font configuration
 font:
   # Normal (roman) font face
