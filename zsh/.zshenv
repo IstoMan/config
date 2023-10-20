@@ -1,4 +1,3 @@
-export QT_QPA_PLATFORMTHEME='qt5ct'
 export XDG_CONFIG_HOME="/home/$USER/.config"
 export EDITOR='nvim'
 export VISUAL='nvim'
