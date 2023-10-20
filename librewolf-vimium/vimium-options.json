@@ -46,8 +46,8 @@
       "passKeys": "9"
     },
     {
-      "pattern": "https?://www.youtube.com/*",
-      "passKeys": "0"
+      "pattern": "https?://open.spotify.com/*",
+      "passKeys": ""
     }
   ],
   "filterLinkHints": false,
@@ -64,7 +64,7 @@
   "scrollStepSize": 60,
   "smoothScroll": true,
   "grabBackFocus": false,
-  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\ny: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\ny: https://www.youtube.com/results?search_query=%s Youtube\nym: https://music.youtube.com/search?q=\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant\nym: https://music.youtube.com/search?q=\naw: https://wiki.archlinux.org/index.php?search=%s&title=Special%3ASearch&go=Go\nnp: https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query=%s",
   "searchUrl": "https://search.brave.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
