@@ -106,4 +106,4 @@ font:
 #     white: '#ECEFF4'
 # theme: Nord
 import:
-  - ~/.config/alacritty/rose-pine-moon.yml
+  - ~/.config/alacritty/themes/solarized_dark.yaml.yaml
