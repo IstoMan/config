@@ -46,3 +46,8 @@ Add this to your ```/etc/sudoers``` file
 ```
 Defaults env_reset,pwfeedback
 ```
+### Kitty Themes
+if you want colour schemes for kitty then just run this command and choose
+```
+kitty +kitten themes
+```
