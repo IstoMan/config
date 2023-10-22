@@ -51,3 +51,7 @@ if you want colour schemes for kitty then just run this command and choose
 ```
 kitty +kitten themes
 ```
+### For tmux to work run this before hand to setup TMP (tmux plugin manger)
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
