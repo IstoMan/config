@@ -106,4 +106,4 @@ font:
 #     white: '#ECEFF4'
 # theme: Nord
 import:
-  - ~/.config/alacritty/themes/solarized_dark.yaml.yaml
+  - ~/.config/alacritty/themes/catppuccin-mocha.yml
