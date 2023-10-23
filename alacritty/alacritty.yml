@@ -64,6 +64,6 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12
+  size: 11
 import:
   - ~/.config/alacritty/themes/nord.yaml
