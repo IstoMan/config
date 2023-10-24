@@ -100,5 +100,12 @@ require("lazy").setup({
 		},
 	},
 	-- "gc" to comment visual regions/lines
-	{ 'numToStr/Comment.nvim', opts = {} }
+	{ 'numToStr/Comment.nvim', opts = {} },
+
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
+
 }, {})
