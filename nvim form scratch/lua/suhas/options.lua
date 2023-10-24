@@ -21,3 +21,5 @@ vim.opt.shortmess:append "sI"
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 -- so to ignore - : and other things like that
 vim.cmd "set whichwrap+=<,>,[,],h,l"
+-- So that extra comments don't come when going to the next line
+vim.cmd "autocmd BufNewFile,BufRead * setlocal formatoptions-=cro"
