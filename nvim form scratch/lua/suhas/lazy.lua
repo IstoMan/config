@@ -28,13 +28,18 @@ require("lazy").setup({
 			'rafamadriz/friendly-snippets',
 		},
 	},
+	-- {
+	-- 	'gbprod/nord.nvim',
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme 'nord'
+	-- 	end,
+	-- },
 	{
-		-- Theme inspired by Atom
-		'gbprod/nord.nvim',
+		"folke/tokyonight.nvim",
+		lazy = false,
 		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme 'nord'
-		end,
+		opts = {},
 	},
 
 	{
@@ -44,7 +49,7 @@ require("lazy").setup({
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = 'nord',
+				theme = 'tokyonight',
 				component_separators = '|',
 				section_separators = '',
 			},
