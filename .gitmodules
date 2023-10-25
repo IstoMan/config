@@ -1,0 +1,3 @@
+[submodule "nvim.(NVCHAD)"]
+	path = nvim.(NVCHAD)
+	url = https://github.com/NvChad/NvChad.git
