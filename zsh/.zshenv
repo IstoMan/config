@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME="/home/$USER/.config"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export MANPAGER='nvim +Man!'
-export BROWSER='librewolf'
+export HISTCONTROL=ignoreboth
 
 export LF_ICONS="\
 tw=:\
