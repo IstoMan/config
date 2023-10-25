@@ -30,7 +30,7 @@ gaps outer 5
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpaper_world_map_gruvbox/World_Map_4k_Gruvbox_Dark.png fill
+output * bg ~/Pictures/BruhWal.png fill 
 #
 # Example configuration:
 #
@@ -273,5 +273,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id swaync 
 exec --no-startup-id wl-paste --watch cliphist store
 exec --no-startup-id /usr/bin/emacs --daemon
+exec --no-startup-id foot --server
 
 include /etc/sway/config.d/*
