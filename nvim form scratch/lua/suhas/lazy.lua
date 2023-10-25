@@ -28,32 +28,26 @@ require("lazy").setup({
 			'rafamadriz/friendly-snippets',
 		},
 	},
-	-- {
-	-- 	'gbprod/nord.nvim',
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme 'nord'
-	-- 	end,
-	-- },
+	{
+		'gbprod/nord.nvim',
+		priority = 1000,
+	},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		opts = {},
 	},
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 
 	{
 		-- Set lualine as statusline
 		'nvim-lualine/lualine.nvim',
 		-- See `:help lualine.txt`
-		opts = {
-			options = {
-				icons_enabled = true,
-				theme = 'tokyonight',
-				component_separators = '|',
-				section_separators = '',
-			},
-		},
 	},
 
 	{
@@ -112,5 +106,12 @@ require("lazy").setup({
 		event = "InsertEnter",
 		opts = {} -- this is equalent to setup({}) function
 	},
+	{ 'rose-pine/neovim', name = 'rose-pine' },
 
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+	},
 }, {})
