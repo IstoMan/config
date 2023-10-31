@@ -380,7 +380,7 @@ browser_display_mode = columns
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = alternative
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
