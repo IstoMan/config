@@ -66,4 +66,4 @@ font:
   # Point size
   size: 11
 import:
-  - ~/.config/alacritty/themes/nord.yaml
+  - /home/suhas/.config/alacritty/themes/catppuccin-macchiato.yml

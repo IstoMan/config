@@ -23,7 +23,6 @@ alias ll="lsd -Alh"
 alias ls='lsd'
 alias cat='bat'
 alias rm="trash -v"
-alias r="ranger"
 alias p="sudo pacman"
 alias lf="lfcd"
 alias mv='mv -i'
