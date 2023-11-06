@@ -98,3 +98,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # For Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# For Xterm
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null

@@ -3,7 +3,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export MANPAGER='nvim +Man!'
 export HISTCONTROL=ignoreboth
-
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 export LF_ICONS="\
 tw=:\
 st=:\
