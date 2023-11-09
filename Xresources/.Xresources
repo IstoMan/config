@@ -1,12 +1,12 @@
-*.font:	JetBrains Mono Nerd Font:pixelsize=16:antialias=true:autohint=true;
-! *.alpha: 0.9
+*.font:	ComicShannsMono Nerd Font:pixelsize=16:antialias=true:autohint=true;
+*.alpha: 1.0
 
 ! Nsxiv
 Nsxiv.window.background: #000000
 Nsxiv.window.foreground: #ffffff
 
 ! XTERM config
-XTerm.vt100.faceName: JetBrains Mono Nerd Font:pixelsize=16:antialias=true:autohint=true
+XTerm.vt100.faceName: ComicShannsMono Nerd Font::pixelsize=18:antialias=true:autohint=true
 XTerm.vt100.bellIsUrgent:   true
 XTerm.vt100.alternateScroll: true
 XTerm.vt100.selectToClipboard: true
