@@ -11,4 +11,4 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle, { desc = '[O]pen Explorer'})
