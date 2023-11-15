@@ -76,9 +76,9 @@ input "type:keyboard" xkb_options caps:swapescape
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Gruvbox-Dark-B'
-    gsettings set $gnome-schema icon-theme 'Gruvbox-plus-icon-MOD'
-    gsettings set $gnome-schema cursor-theme 'WhiteSur-cursors'
+    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+    gsettings set $gnome-schema icon-theme 'ePapirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
 }
 
 # class                 border  backgr. text    indicator child_border
