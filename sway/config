@@ -130,7 +130,7 @@ for_window [app_id="org.gnome.Calculator"] floating enabled
     bindsym XF86MonBrightnessDown exec brillo -q -U 5
 
     # For Exit menu
-    bindsym $mod+Shift+q exec wlogout
+    bindsym $mod+Shift+q exec swaymsg exit
 
     # ClipBoard menu
     bindsym Mod1+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
