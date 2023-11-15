@@ -30,7 +30,7 @@ gaps outer 5
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Pictures/BruhWal.png fill 
+output * bg ~/Pictures/JapaneseRoad.jpg fill
 #
 # Example configuration:
 #
