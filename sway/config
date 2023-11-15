@@ -18,7 +18,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -i --show drun
+set $menu rofi -show drun
 
 # Font 
 font pango: JetBrains Mono Nerd Font 11
@@ -30,7 +30,7 @@ gaps outer 5
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/BruhWal.png fill 
+#output * bg ~/Pictures/BruhWal.png fill 
 #
 # Example configuration:
 #
@@ -133,7 +133,7 @@ for_window [app_id="org.gnome.Calculator"] floating enabled
     bindsym $mod+Shift+q exec wlogout
 
     # ClipBoard menu
-    bindsym Mod1+v exec cliphist list | wofi -dmenu | cliphist decode | wl-copy
+    bindsym Mod1+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 #
 # Moving around:
