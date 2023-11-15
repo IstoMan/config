@@ -122,4 +122,7 @@ require("lazy").setup({
 		priority = 1000 ,
 		lazy = false,
 	},
+	{
+		"norcalli/nvim-colorizer.lua",
+	},
 }, {})
