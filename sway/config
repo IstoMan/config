@@ -43,9 +43,9 @@ output * bg ~/Pictures/JapaneseRoad.jpg fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -s fill -i ~/Pictures/BingWallpaper/20231109-BadlandsSunrise_EN-IN3577388637_UHD.jpg --font "JetBrainsMono"' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -s fill -i ~/Pictures/BingWallpaper/20231109-BadlandsSunrise_EN-IN3577388637_UHD.jpg --font "JetBrainsMono"'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -76,7 +76,7 @@ input "type:keyboard" xkb_options caps:swapescape
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+    gsettings set $gnome-schema gtk-theme 'adw-gtk'
     gsettings set $gnome-schema icon-theme 'ePapirus-Dark'
     gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
 }
@@ -134,7 +134,7 @@ for_window [class="Nsxiv"] floating enabled
     bindsym XF86MonBrightnessDown exec brillo -q -U 5
 
     # For Exit menu
-    bindsym $mod+Shift+q exec swaymsg exit
+    bindsym $mod+Shift+q exec ~/.config/rofi/scripts/powermenu.sh
 
     # ClipBoard menu
     bindsym Mod1+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
