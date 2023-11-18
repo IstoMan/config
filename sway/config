@@ -130,8 +130,8 @@ for_window [class="Nsxiv"] floating enabled
     bindsym XF86AudioMicMute exec  wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
     #For Brightness
-    bindsym XF86MonBrightnessUp exec brillo -q -A 5
-    bindsym XF86MonBrightnessDown exec brillo -q -U 5
+    bindsym XF86MonBrightnessUp exec brillo -q -A 2
+    bindsym XF86MonBrightnessDown exec brillo -q -U 2
 
     # For Exit menu
     bindsym $mod+Shift+q exec ~/.config/rofi/scripts/powermenu.sh
