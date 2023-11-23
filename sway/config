@@ -80,13 +80,13 @@ exec_always {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #d65d0e #d65d0e #1a1826 #fe8019   #d65d0e
-client.focused_inactive #ebdbb2 #5f676a #ffffff #ebdbb2   #ebdbb2
+client.focused          #005577 #005577 #eeeeee #2e9ef4   #005577
+client.focused_inactive #ebdbb2 #5f676a #eeeeee #ebdbb2   #ebdbb2
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #cc241d #900000 #ffffff #cc241d   #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.urgent           #cc241d #900000 #eeeeee #cc241d   #cc241d
+client.placeholder      #000000 #0c0c0c #eeeeee #000000   #0c0c0c
 
-client.background       #ffffff
+client.background       #eeeeee
 
 # For X
 exec_always xrdb ~/.Xresources
