@@ -95,6 +95,7 @@ exec_always xrdb ~/.Xresources
 for_window [app_id="io.bassi.Amberol"] floating enabled
 for_window [app_id="org.gnome.Calculator"] floating enabled
 for_window [class="Nsxiv"] floating enabled
+for_window [class="steam"] floating enabled
 
 ### Key bindings
 #
