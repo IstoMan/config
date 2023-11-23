@@ -141,6 +141,12 @@ for_window [class="steam"] floating enabled
     # ClipBoard menu
     bindsym Mod1+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
+    # ScreenShots
+    bindsym $mod+Shift+s exec ~/.config/rofi/scripts/rofi-screenshot.sh
+
+    # Calculator
+    bindsym XF86Calculator exec rofi -show calc
+
 #
 # Moving around:
 #
