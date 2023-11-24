@@ -19,9 +19,11 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show drun
+set $fileBr nemo
+set $browser librewolf
 
 # Font 
-font pango: JetBrains Mono Nerd Font 11
+font pango: JetBrainsMono NF 11
 
 # Gaps
 gaps inner 5
@@ -111,7 +113,10 @@ for_window [class="steam"] floating enabled
     bindsym $mod+r exec $menu
 
     # Open filbrowser
-    bindsym $mod+f exec nemo
+    bindsym $mod+f exec $fileBr
+
+    # OPen Browser
+    bindsym $mod+Shift+b exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
