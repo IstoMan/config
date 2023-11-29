@@ -214,7 +214,7 @@ map gD cd /run/media/
 map gt cd ~/.local/share/Trash/files/
 map gd cd ~/Downloads
 map gp cd ~/Pictures/
-map gm cd ~/Music
+map gm cd ~/music
 map gc cd ~/.config/
 map gr cd ~/Repos/
 map gv cd ~/Videos/
