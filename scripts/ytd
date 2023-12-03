@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Please provide a URL."
+  exit 1
+fi
+
+url="$1"
+
+# Ask the user for the directory choice
+read -p "Choose a directory (1 for Music, 2 for Videos): " choice
+
+case "$choice" in
+  1)
+    directory="$HOME/Music"
+    yt-dlp -x -f bestaudio[ext=m4a] \
+      --add-metadata \
+      --embed-thumbnail \
+      --convert-thumb png \
+      --ppa "ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
+      --external-downloader aria2c \
+      --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' \
+      -o "$directory/%(title)s.%(ext)s" "$url" && mpc update
+    ;;
+  2)
+    directory="$HOME/Videos/YT"
+    yt-dlp --embed-thumbnail \
+      --write-sub \
+      --sub-lang en \
+      --convert-subs srt \
+      --external-downloader aria2c \
+      --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' \
+      -o "$directory/%(title)s/%(title)s.%(ext)s" "$url"
+    ;;
+  *)
+    echo "Invalid choice. Exiting."
+    exit 1
+    ;;
+esac
