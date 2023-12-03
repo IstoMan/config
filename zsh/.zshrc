@@ -94,10 +94,22 @@ else
 fi
 
 # For Autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+	. /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+	echo "can't found the zsh-autosuggestions script"
+fi
 
 # For Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+	. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+	echo "can't found the zsh-syntaxhighlight script"
+fi
 
 # For Xterm
 # [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
