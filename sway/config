@@ -19,11 +19,11 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show drun
-set $fileBr nemo
-set $browser librewolf
+set $fileBr nautilus
+set $browser flatpak run io.gitlab.librewolf-community
 
 # Font 
-font pango: JetBrainsMono NF 11
+font pango: JetBrains Mono 11
 
 # Gaps
 gaps inner 5
@@ -78,7 +78,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Arc-Dark'
     gsettings set $gnome-schema icon-theme 'ePapirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+    gsettings set $gnome-schema cursor-theme 'Capitaine Cursors'
 }
 
 # class                 border  backgr. text    indicator child_border
@@ -156,7 +156,7 @@ for_window [class="steam"] floating enabled
     bindsym $mod+Shift+s exec ~/.config/rofi/scripts/rofi-screenshot.sh
 
     # Calculator
-    bindsym XF86Calculator exec rofi -show calc
+    bindsym XF86Calculator exec rofi -show calc -modi calc -no-show-match -no-sort
 
 #
 # Moving around:
@@ -292,6 +292,7 @@ bar {
 
 ## Autostarting Applications 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id lxpolkit
 exec --no-startup-id dunst
 exec --no-startup-id autotiling
 exec --no-startup-id wl-paste --watch cliphist store
