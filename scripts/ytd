@@ -20,7 +20,7 @@ case "$choice" in
       --ppa "ThumbnailsConvertor+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" \
       --external-downloader aria2c \
       --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' \
-      -o "$directory/%(title)s.%(ext)s" "$url" && mpc update
+      -o "$directory/%(title)s.%(ext)s" "$url"
     ;;
   2)
     directory="$HOME/Videos/YT"
