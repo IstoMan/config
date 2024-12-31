@@ -66,4 +66,4 @@ font:
   # Point size
   size: 12
 import:
-  - /home/suhas/.config/alacritty/themes/catppuccin-latte.toml
+  - /home/suhas/.config/alacritty/themes/catppuccin-latte.yml
