@@ -45,12 +45,12 @@ live_config_reload: true
 font:
   # Normal (roman) font face
   normal:
-    family: "JetBrainsMono NF"
+    family: "JetBrainsMono Nerd Font"
     #style: Regular
 
   # Bold font face
   bold:
-    family: "JetBrainsMono NF"
+    family: "JetBrainsMono Nerd Font"
     #style: Bold
 
   # Italic font face
@@ -66,4 +66,4 @@ font:
   # Point size
   size: 12
 import:
-  - /home/suhas/.config/alacritty/themes/catppuccin-macchiato.yml
+  - /home/suhas/.config/alacritty/themes/catppuccin-latte.toml
