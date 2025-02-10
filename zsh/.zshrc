@@ -83,16 +83,6 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
-#Autojump
-
-if [ -f "/usr/share/autojump/autojump.sh" ]; then
-	. /usr/share/autojump/autojump.zsh
-elif [ -f "/usr/share/autojump/autojump.bash" ]; then
-	. /usr/share/autojump/autojump.zsh
-else
-	echo "can't found the autojump script"
-fi
-
 # For Autosuggestions
 if [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
 	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -113,3 +103,4 @@ fi
 
 # For Xterm
 # [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+eval "$(zoxide init --cmd cd zsh)"
