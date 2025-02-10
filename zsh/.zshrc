@@ -19,6 +19,8 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # vi mode
 bindkey -v
