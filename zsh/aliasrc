@@ -19,9 +19,9 @@ alias nsway="$EDITOR ~/.config/sway/config"
 # Some useful utilitie
 alias v="$EDITOR"
 alias emacs="emacsclient -c -a 'emacs'"
-alias ll="lsd -Alh"
-alias ls='lsd'
-alias cat='batcat'
+alias ll="ls -Alh"
+alias ls='ls --color=always'
+alias cat='bat'
 alias rm="trash -v"
 alias p="sudo pacman"
 alias lf="lfcd"
