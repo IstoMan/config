@@ -96,7 +96,7 @@ fi
 
 # For Syntax highlighting
 if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
 	. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
