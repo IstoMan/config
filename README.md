@@ -40,7 +40,6 @@ Put this in the ```~/.config/nvim/lua/core/init.lua```
 vim.wo.relativenumber = true
 ```
 
-
 ### For Password Feedback 
 Add this to your ```/etc/sudoers``` file
 ```
@@ -54,4 +53,9 @@ kitty +kitten themes
 ### For tmux to work run this before hand to setup TMP (tmux plugin manger)
 ```
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### Lf Dependencies
+```bash
+atool chafa diff-so-fancy lynx ffmpeg ffmpegthumbnailer fontforge glow highlight jq imagemagick perl-image-exiftool poppler transmission-cli
 ```
