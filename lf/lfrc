@@ -216,7 +216,7 @@ map gd cd ~/Downloads
 map gp cd ~/Pictures/
 map gm cd ~/music
 map gc cd ~/.config/
-map gr cd ~/Repos/
+map gr cd ~/repos/
 map gv cd ~/Videos/
 
 # Trashing
