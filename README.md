@@ -14,24 +14,41 @@ For your the zshrc to work you will need this dendencies
 exa bat trash-cli ranger neovim
 ```
 
-### Emacs dependencies
+### Setting Up Emacs
+#### Emacs dependencies
 For Doom emacs to work you will need this these dependencies
 ```bash
 ripgrep fd emacs
 ```
 
-### If you want to install Doom emacs 
+#### If you want to install Doom emacs 
 Use this command to install doom emacs
 ```bash
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 ```
 
-#### For Realtive line numbers
- In Doom Emacs:
+#### Config
+**For relative line numbers:**
     in the ```~/.config/doom/config.el``` put this
-   ```bash
+```emacs-lisp
    (setq display-line-numbers-type `relative)
+```
+
+**For setting up fonts**
+
+``` emacs-lisp
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
+      doom-variable-pitch-font (font-spec :family "Inter" :size 15)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 24))
+
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 ```
 
 In Neovim:
