@@ -9,13 +9,6 @@ alias npicom="$EDITOR ~/.config/picom/picom.conf"
 alias ni3="$EDITOR ~/.config/i3/config"
 alias nsway="$EDITOR ~/.config/sway/config"
 
-
-
-
-
-
-
-
 # Some useful utilitie
 alias v="$EDITOR"
 alias emacs="emacsclient -c -a 'emacs'"
