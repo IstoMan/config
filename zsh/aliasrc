@@ -4,6 +4,7 @@
 # For quick edits
 alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nsway="$EDITOR ~/.config/sway/config"
+alias fb="docker run --rm -t -v /home/suhas/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric"
 
 # Some useful utilitie
 alias v="$EDITOR"
