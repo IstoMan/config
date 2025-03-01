@@ -4,13 +4,10 @@
 # For quick edits
 alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nsway="$EDITOR ~/.config/sway/config"
+alias nalias="$EDITOR ~/.config/zsh/aliasrc"
 
-if [ -t 1 ]; then
-    DOCKER_FLAGS="-t"
-else
-    DOCKER_FLAGS="-i"
-fi
-alias fb="docker run --rm $DOCKER_FLAGS -v /home/suhas/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric"
+# Fabric Command
+alias fb='if [ -t 1 ]; then docker run --rm -i -v ~/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric; else docker run --rm -t -v ~/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric; fi'
 
 # Some useful utilitie
 alias v="$EDITOR"
