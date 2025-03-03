@@ -6,6 +6,53 @@ alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nsway="$EDITOR ~/.config/sway/config"
 alias nalias="$EDITOR ~/.config/zsh/aliasrc"
 
+# Interactive file selection and editing with Neovim
+function nf() {
+  # Store original IFS value to restore it later
+  local old_ifs="$IFS"
+  
+  # Change IFS to newline to handle filenames with spaces correctly
+  IFS=$'\n'
+  
+  # Use fzf with -m flag to allow multiple selections
+  local selected_files=($(fzf --multi \
+    --style full \
+    --border --padding 1,2 \
+    --border-label ' Edit Files ' --input-label ' Input ' --header-label ' File Type ' \
+    --preview 'bat --color=always {}' \
+    --bind 'result:transform-list-label:
+        if [[ -z $FZF_QUERY ]]; then
+          echo " $FZF_MATCH_COUNT items "
+        else
+          echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+        fi
+        ' \
+    --bind 'focus:transform-preview-label:[[ -n {} ]] && printf " Previewing [%s] " {}' \
+    --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
+    --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
+    --color 'border:#aaaaaa,label:#cccccc' \
+    --color 'preview-border:#9999cc,preview-label:#ccccff' \
+    --color 'list-border:#669966,list-label:#99cc99' \
+    --color 'input-border:#996666,input-label:#ffcccc' \
+    --color 'header-border:#6699cc,header-label:#99ccff'))
+  
+  # Restore original IFS
+  IFS="$old_ifs"
+
+  # Check if any files were selected
+  if [[ ${#selected_files[@]} -gt 0 ]]; then
+    # Show a summary of selected files
+    echo "Opening ${#selected_files[@]} file(s) in Neovim:"
+    printf " - %s\n" "${selected_files[@]}"
+    
+    # Open all selected files in Neovim
+    nvim "${selected_files[@]}"
+  else
+    echo "No files selected, exiting."
+    return 1
+  fi
+}
+
 # Fabric Command
 fb() {
     if [ -t 0 ]; then
