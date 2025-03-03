@@ -70,7 +70,7 @@ alias emacs="emacsclient -c -a 'emacs'"
 alias ll="ls -Alh"
 alias ls='ls --color=always'
 alias cat='bat'
-alias rm="trash -v"
+alias rm="trash"
 alias p="sudo pacman"
 alias lf="lfcd"
 alias mv='mv -i'
