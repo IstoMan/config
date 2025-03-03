@@ -72,7 +72,6 @@ alias ls='ls --color=always'
 alias cat='bat'
 alias rm="trash"
 alias p="sudo pacman"
-alias lf="lfcd"
 alias mv='mv -i'
 # To apt to nala
 apt() { 
