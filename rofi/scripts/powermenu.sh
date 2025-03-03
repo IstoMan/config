@@ -77,6 +77,8 @@ run_cmd() {
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'sway' ]]; then
 				swaymsg exit
+			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
+        hyprctl dispatch exit 1
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi

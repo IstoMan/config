@@ -33,7 +33,7 @@ configuration {
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
 /*	combi-modes: "window,run";*/
-/*      matching: "glob";*/
+    matching: "fuzzy";
 /*	tokenize: true;*/
 /*	m: "-5";*/
 /*	filter: ;*/
@@ -152,4 +152,4 @@ configuration {
   }
 }
 //@theme "/home/suhas/.local/share/rofi/themes/Test.rasi"
-@theme "/home/suhas/.local/share/rofi/themes/Norm.rasi"
+@theme "/home/suhas/.config/rofi/themes/Norm.rasi"
