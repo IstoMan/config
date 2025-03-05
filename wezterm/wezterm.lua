@@ -15,7 +15,7 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = 'tokyonight_storm'
 config.cursor_blink_rate = 0
-config.enable_wayland = true
+config.enable_wayland = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = 'NeverPrompt'
 config.font = wezterm.font { family = 'JetBrains Mono'}
