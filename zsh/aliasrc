@@ -67,8 +67,9 @@ fb() {
 # Some useful utilitie
 alias v="$EDITOR"
 alias emacs="emacsclient -c -a 'emacs'"
-alias ll="ls -Alh"
-alias ls='ls --color=always'
+alias ll="lsd -Alh"
+alias ls="lsd"
+alias lt="ls --tree"
 alias cat='bat'
 alias rm="trash"
 alias p="sudo pacman"
