@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'tokyonight_storm'
+config.color_scheme = 'Catppuccin Macchiato'
 config.cursor_blink_rate = 0
 config.enable_wayland = false
 config.hide_tab_bar_if_only_one_tab = true
