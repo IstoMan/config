@@ -19,6 +19,7 @@ config.enable_wayland = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = 'NeverPrompt'
 config.font = wezterm.font { family = 'JetBrains Mono'}
+config.window_background_opacity = 0.9
 config.font_size = 12.0
 config.font_rules = {
   -- Bold-and-italic
