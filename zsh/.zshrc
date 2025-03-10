@@ -65,7 +65,7 @@ function y() {
 }
 
 # Use lf to switch directories and bind it to ctrl-o
-bindkey -s '^f' 'y\n'
+bindkey -s '^o' 'y\n'
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line

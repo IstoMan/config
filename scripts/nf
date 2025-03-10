@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+#
+# nf.sh - Interactive file selection and editing script using fzf and bat
+# 
+# This script allows you to:
+#   - Browse and select multiple files with fuzzy search
+#   - Preview file contents with syntax highlighting
+#   - Open selected files in Neovim for editing
+
+# Store original IFS value to restore it later
+old_ifs="$IFS"
+
+# Change IFS to newline to handle filenames with spaces correctly
+IFS=$'\n'
+
+# Use fzf with -m flag to allow multiple selections
+selected_files=($(fzf --multi \
+  --style full \
+  --border --padding 1,2 \
+  --border-label ' Edit Files ' --input-label ' Input ' --header-label ' File Type ' \
+  --preview 'bat --color=always {}' \
+  --bind 'result:transform-list-label:
+      if [[ -z $FZF_QUERY ]]; then
+        echo " $FZF_MATCH_COUNT items "
+      else
+        echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+      fi
+      ' \
+  --bind 'focus:transform-preview-label:[[ -n {} ]] && printf " Previewing [%s] " {}' \
+  --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
+  --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
+  --color 'border:#aaaaaa,label:#cccccc' \
+  --color 'preview-border:#9999cc,preview-label:#ccccff' \
+  --color 'list-border:#669966,list-label:#99cc99' \
+  --color 'input-border:#996666,input-label:#ffcccc' \
+  --color 'header-border:#6699cc,header-label:#99ccff'))
+
+# Restore original IFS
+IFS="$old_ifs"
+
+# Check if any files were selected
+if [[ ${#selected_files[@]} -gt 0 ]]; then
+  # Show a summary of selected files
+  echo "Opening ${#selected_files[@]} file(s) in Neovim:"
+  printf " - %s\n" "${selected_files[@]}"
+  
+  # Open all selected files in Neovim
+  nvim "${selected_files[@]}"
+else
+  echo "No files selected, exiting."
+  exit 1  # Changed from 'return 1' to 'exit 1' since we're in a script now
+fi

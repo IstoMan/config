@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# fb.sh - Fabric Docker Command Wrapper
+#
+# This script provides a convenient wrapper around the Fabric command line tool
+# running inside a Docker container. It automatically detects whether input is
+# coming from an interactive terminal or being piped in, and adjusts the Docker
+# run parameters accordingly.
+#
+# The script mounts your local Fabric configuration directory into the container
+# so that configuration persists between runs.
+#
+# Usage:
+#   ./fb.sh [fabric command arguments]
+#   cat some_file.txt | ./fb.sh [fabric command arguments]
+
+# Check if standard input (STDIN) is a terminal
+if [ -t 0 ]; then
+    # STDIN is a terminal (interactive mode)
+    # Use -t flag for Docker to allocate a pseudo-TTY for interactive use
+    docker run --rm -t -v ~/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric "$@"
+else
+    # STDIN is not a terminal (piped input)
+    # Use -i flag for Docker to keep STDIN open even if not attached
+    docker run --rm -i -v ~/.config/fabric/:/root/.config/fabric/ fabric_con:latest fabric "$@"
+fi
