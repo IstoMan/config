@@ -1,3 +1,0 @@
-#!/bin/env sh
-
-fdfind -LHat f | fzf | xargs -I {} $EDITOR "{}"
