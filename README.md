@@ -51,12 +51,6 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
   '(font-lock-keyword-face :slant italic))
 ```
 
-In Neovim:
-Put this in the ```~/.config/nvim/lua/core/init.lua```
-```bash
-vim.wo.relativenumber = true
-```
-
 ### For Password Feedback 
 Add this to your ```/etc/sudoers``` file
 ```bash
@@ -70,9 +64,4 @@ kitty +kitten themes
 ### For tmux to work run this before hand to setup TMP (tmux plugin manger)
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-### Lf Dependencies
-```bash
-atool chafa diff-so-fancy lynx ffmpeg ffmpegthumbnailer fontforge glow highlight jq imagemagick perl-image-exiftool poppler transmission-cli
 ```
