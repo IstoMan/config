@@ -24,6 +24,9 @@ vim.opt.expandtab = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
+-- diables autocomments
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.schedule(function()
@@ -58,6 +61,3 @@ vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 
 -- so to ignore - : and other things like that
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-
--- So that extra comments don't come when going to the next line
-vim.cmd("autocmd BufNewFile,BufRead * setlocal formatoptions-=cro")

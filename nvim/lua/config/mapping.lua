@@ -1,7 +1,7 @@
 local keymap = vim.keymap.set
 -- Create opts with your existing settings plus room for descriptions
 local function dopts(description)
-    return { noremap = true, silent = true, desc = description }
+	return { noremap = true, silent = true, desc = description }
 end
 local term_opts = { silent = true }
 vim.g.mapleader = " "
@@ -14,7 +14,7 @@ keymap("x", "<leader>p", [["_dP]], dopts("Paste without yanking"))
 
 -- For tmux like navigation
 keymap("n", "<leader>%", ":vsplit<CR>", dopts("Split Vertical"))
-keymap("n", "<leader>\"", ":split<CR>", dopts("Split Horizontal"))
+keymap("n", '<leader>"', ":split<CR>", dopts("Split Horizontal"))
 keymap("n", "<leader>x", ":close<CR>", dopts("Close window"))
 
 -- Resize with arrows
@@ -30,13 +30,17 @@ keymap("n", "<S-h>", ":bprevious<CR>", dopts("Buffer Previous"))
 -- Neogit
 keymap("n", "<leader>gg", ":Neogit<CR>", dopts("[G]it status"))
 
+-- Codium Toggle
+keymap("n", "<leader>at", ":CodeiumToggle<CR>", dopts("[T]oggle [A]i"))
+keymap("n", "<leader>ac", ":CodeiumChat<CR>", dopts("[A]i [C]hat"))
+--
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
