@@ -15,7 +15,7 @@ url="$2"
 if [ "$option" = "-m" ]; then
   # Music download
   directory="$HOME/Music"
-  yt-dlp -x -f bestaudio[ext=m4a] \
+  yt-dlp -x -f bestaudio \
     --add-metadata \
     --embed-thumbnail \
     --convert-thumb png \
