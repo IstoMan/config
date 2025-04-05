@@ -56,11 +56,7 @@ Add this to your ```/etc/sudoers``` file
 ```bash
 Defaults env_reset,pwfeedback
 ```
-### Kitty Themes
-if you want colour schemes for kitty then just run this command and choose
-```bash
-kitty +kitten themes
-```
+
 ### For tmux to work run this before hand to setup TMP (tmux plugin manger)
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
