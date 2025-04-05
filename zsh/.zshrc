@@ -1,9 +1,17 @@
+# Install zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+
+
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load color
 
-PROMPT="%(?:%{$fg_bold[green]%}→:%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%~%{$reset_color%}%b  "
+# PROMPT="%(?:%{$fg_bold[green]%}→:%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%~%{$reset_color%}%b  "
+eval "$(oh-my-posh init zsh)"
 
-setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
@@ -11,11 +19,20 @@ setopt interactive_comments
 HISTFILE=~/.config/zsh/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+
 # The following lines were added by compinstall
 
 # Basic auto/tab complete:
 autoload -U compinit
-zstyle ':completion:*' menu select
+# zstyle ':completion:*' menu select
+zstyle ':completion:*' menu no
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zmodload zsh/complist
 compinit
 
@@ -65,7 +82,7 @@ function y() {
 }
 
 # Use lf to switch directories and bind it to ctrl-o
-bindkey -s '^o' 'y\n'
+bindkey -s '^f' 'y\n'
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -86,24 +103,12 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
-# For Autosuggestions
-if [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-	. /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-else
-	echo "can't found the zsh-autosuggestions script"
-fi
+zinit cdreplay -q
 
-# For Syntax highlighting
-if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-	. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-elif [ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-	. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-	echo "can't found the zsh-syntaxhighlight script"
-fi
+# Zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# For Xterm
-# [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 eval "$(zoxide init --cmd cd zsh)"
