@@ -1,5 +1,5 @@
 configuration {
-	modes: "window,drun,run,ssh,emoji,filebrowser,calc";
+	modes: "window,drun,run,ssh,filebrowser";
 	font: "JetBrainsMono 12";
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -152,4 +152,4 @@ configuration {
   }
 }
 //@theme "/home/suhas/.local/share/rofi/themes/Test.rasi"
-@theme "/home/suhas/.config/rofi/themes/Norm.rasi"
+@theme "Norm.rasi"
