@@ -4,12 +4,9 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-
-
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load color
 
-# PROMPT="%(?:%{$fg_bold[green]%}→:%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%~%{$reset_color%}%b  "
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/catppuccin_macchiato.omp.json)"
 
 stty stop undef		# Disable ctrl-s to freeze terminal.
