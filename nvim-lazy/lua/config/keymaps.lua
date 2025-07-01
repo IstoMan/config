@@ -5,3 +5,9 @@ vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", {})
 vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", {})
 vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", {})
 vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", {})
+
+vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {
+  noremap = true,
+  silent = true,
+  desc = "Open Neogit (Git UI)", -- A description for which-key or similar plugins
+})
