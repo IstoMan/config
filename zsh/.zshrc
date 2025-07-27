@@ -97,6 +97,9 @@ fi
 # for doom emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+# For node packages
+export PATH=~/.npm-global/bin:$PATH
+
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
