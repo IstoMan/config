@@ -4,3 +4,4 @@
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 
 vim.g.lazyvim_python_lsp = "pyright"
+vim.opt.mouse = ""

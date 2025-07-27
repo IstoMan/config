@@ -11,3 +11,7 @@ vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {
   silent = true,
   desc = "Open Neogit (Git UI)", -- A description for which-key or similar plugins
 })
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
