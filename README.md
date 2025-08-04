@@ -1,40 +1,23 @@
-# Config
-Some of my configs
+# Dotfiles
 
-# Some Prerequisites
+These are my personal dotfiles for various applications. Each directory contains a `README.md` with more information about the configuration and its dependencies.
 
-### Create a zshenv file in `/etc/zsh/zshenv`
-In that file add this
+## Installation
+
+First you would need `git` and `stow`
+
 ```bash
-ZDOTDIR=~/.config/zsh
+sudo pacman -Syu git stow
 ```
 
-For your the zshrc to work you will need this dendencies
+To install these dotfiles, you can use a tool like `stow`.
+
 ```bash
-exa bat trash-cli ranger neovim
+stow -d ~/Repos/Dotfiles -t ~/ .
 ```
 
-### Setting Up Emacs
-#### Emacs dependencies
-For Doom emacs to work you will need this these dependencies
-```bash
-ripgrep fd emacs
-```
+This will create symbolic links from the files in this repository to your home directory.
 
-#### If you want to install Doom emacs 
-Use this command to install doom emacs
-```bash
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
-```
+## Dependencies
 
-### For Password Feedback 
-Add this to your ```/etc/sudoers``` file
-```bash
-Defaults env_reset,pwfeedback
-```
-
-### For tmux to work run this before hand to setup TMP (tmux plugin manger)
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
+Each application has its own dependencies, which are listed in the `README.md` file within its respective directory. Please refer to those files for installation instructions.
