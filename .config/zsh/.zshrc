@@ -73,7 +73,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# Use lf to switch directories and bind it to ctrl-o
+# Use lf to switch directories and bind it to ctrl-f
 bindkey -s '^f' 'y\n'
 
 # Load aliases and shortcuts if existent.
