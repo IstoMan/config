@@ -63,6 +63,19 @@ source <(fzf --zsh)
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^E' edit-command-line
 
+ # lfcd but for yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# Use lf to switch directories and bind it to ctrl-o
+bindkey -s '^f' 'y\n'
+
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
