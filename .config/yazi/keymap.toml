@@ -1,0 +1,11 @@
+# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+
+append_keymap = [
+  { on = [ "<C-n>" ], run = ''' shell 'dragon-drop -i -T -k "$@"' --confirm ''', desc = "Drag and drop files" },
+  { on = [ "<A-n>" ], run = ''' shell 'dragon-drop -i -T -k -a "$@"' --confirm ''', desc = "Drag and drop files" },
+  { on = [ "<A-w>" ], run = "shell --confirm 'swww img '$1' --transition-type=grow --transition-fps=60 --transition-pos=right'", desc = "Change the wallpaper"},
+]
