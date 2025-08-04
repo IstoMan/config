@@ -9,9 +9,12 @@ To use this configuration, you'll need to install:
 - `tpm` (Tmux Plugin Manager)
 
 ### Arch Linux Installation
+
 ```bash
-sudo pacman -S tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone --single-branch https://github.com/gpakosz/.tmux.git ~/Repos/oh-my-tmux
+mkdir -p "$XDG_CONFIG_HOME/tmux"
+ln -s ~/Repos/oh-my-tmux/.tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
+cp ~/Repos/oh-my-tmux/.tmux.conf.local "$XDG_CONFIG_HOME/tmux/tmux.conf.local"
 ```
 
 ## Tips
