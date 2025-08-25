@@ -88,3 +88,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 eval "$(zoxide init --cmd cd zsh)"
+
+# bun completions
+[ -s "/home/chad/.bun/_bun" ] && source "/home/chad/.bun/_bun"
