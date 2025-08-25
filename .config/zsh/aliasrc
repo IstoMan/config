@@ -5,14 +5,15 @@
 # For quick edits
 alias nzsh="$EDITOR ~/.config/zsh/.zshrc"
 alias nsway="$EDITOR ~/.config/sway/config"
+alias nhypr="$EDITOR ~/.config/hypr/hyprland.conf"
 alias nalias="$EDITOR ~/.config/zsh/aliasrc"
 
 # Some useful utilitie
 alias v="$EDITOR"
 alias emacs="emacsclient -c -a 'emacs'"
-alias ll="lsd -Alh"
-alias ls="lsd"
-alias lt="ls --tree"
+alias ll="eza -alH --icons"
+alias ls="eza --icons"
+alias lt="eza -T"
 alias rm="trash"
 alias mv='mv -i'
 
