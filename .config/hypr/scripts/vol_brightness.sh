@@ -123,13 +123,13 @@ volume_mute)
 
 brightness_up)
   # Increases brightness and displays the notification
-  brillo -q -A $brightness_step -u 100000
+  brillo -A $brightness_step -u 100000
   show_brightness_notif
   ;;
 
 brightness_down)
   # Decreases brightness and displays the notification
-  brillo -q -U $brightness_step -u 100000
+  brillo -U $brightness_step -u 100000
   show_brightness_notif
   ;;
 
