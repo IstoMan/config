@@ -20,33 +20,33 @@ lang_saved="Screenshot saved to file"
 # END OF LANGUAGE STRINGS
 
 rofi_delay=$(
-    printf "%s 1s\n%s 3s\n%s 5s\n%s 10s\n%s\n" \
-           "$lang_delay" "$lang_delay" "$lang_delay" "$lang_delay" "$lang_nodelay" |
+  printf "%s 1s\n%s 3s\n%s 5s\n%s 10s\n%s\n" \
+    "$lang_nodelay" "$lang_delay" "$lang_delay" "$lang_delay" "$lang_delay" |
     rofi -dmenu -p "screenshot" -lines 5
 ) || exit 2
 
 rofi_save_method=$(
-    printf "%s\n%s\n%s\n" "$lang_save_png" "$lang_save_jpg" "$lang_copy_clipboard" |
+  printf "%s\n%s\n%s\n" "$lang_copy_clipboard" "$lang_save_png" "$lang_save_jpg" |
     rofi -dmenu -p "screenshot" -lines 3
 ) || exit 3
 
 rofi_scr_type=$(
-    printf "%s\n%s\n" "$lang_scr_whole" "$lang_scr_fragment" |
+  printf "%s\n%s\n" "$lang_scr_fragment" "$lang_scr_whole" |
     rofi -dmenu -p "screenshot" -lines 2
 ) || exit 4
 
 if [ "$rofi_scr_type" = "$lang_scr_fragment" ]; then
-    screen_fragment=$(slurp)
+  screen_fragment=$(slurp)
 fi
 
 if [ "$rofi_delay" = "$lang_delay 1s" ]; then
-    sleep 1
+  sleep 1
 elif [ "$rofi_delay" = "$lang_delay 3s" ]; then
-    sleep 3
+  sleep 3
 elif [ "$rofi_delay" = "$lang_delay 5s" ]; then
-    sleep 5
+  sleep 5
 elif [ "$rofi_delay" = "$lang_delay 10s" ]; then
-    sleep 10
+  sleep 10
 fi
 
 filename="Screenshot $(date '+%Y-%m-%d, %R:%S')"
@@ -54,22 +54,21 @@ filepath="$SAVE_DIR/$filename.png"
 tempfilepath="/tmp/$filename.png"
 
 if [ "$rofi_scr_type" = "$lang_scr_fragment" ]; then
-    grim -g "$screen_fragment" "$tempfilepath"
+  grim -g "$screen_fragment" "$tempfilepath"
 else
-    grim "$tempfilepath"
+  grim "$tempfilepath"
 fi
 
-
 if [ "$rofi_save_method" = "$lang_copy_clipboard" ]; then
-    wl-copy < "$tempfilepath"
-    notify-send "$lang_copied"
+  wl-copy <"$tempfilepath"
+  notify-send "$lang_copied"
 elif [ "$rofi_save_method" = "$lang_save_jpg" ]; then
-    convert "/tmp/$filename.png" "/tmp/$filename.jpg"
-    cp "/tmp/$filename.jpg" "$SAVE_DIR"
-    notify-send "$lang_saved" "$SAVE_DIR/$filename.jpg"
+  convert "/tmp/$filename.png" "/tmp/$filename.jpg"
+  cp "/tmp/$filename.jpg" "$SAVE_DIR"
+  notify-send "$lang_saved" "$SAVE_DIR/$filename.jpg"
 else
-    cp "$tempfilepath" "$filepath"
-    notify-send "$lang_saved" "$SAVE_DIR/$filename.png"
+  cp "$tempfilepath" "$filepath"
+  notify-send "$lang_saved" "$SAVE_DIR/$filename.png"
 fi
 
 rm "$tempfilepath"
