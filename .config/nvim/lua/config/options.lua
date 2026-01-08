@@ -3,3 +3,11 @@
 -- Add any additional options here
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.opt.mouse = ""
+vim.cmd([[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]])
+
+vim.o.guifont = "JetBrains Mono:h12"
