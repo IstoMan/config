@@ -16,9 +16,11 @@
 # on Ghostty's website, at https://ghostty.org/docs/config.
 
 confirm-close-surface = false
-cursor-invert-fg-bg = true
-theme = catppuccin-macchiato
+theme = Catppuccin Macchiato
 background-opacity = 0.85
+font-family = JetBrainsMono
+
+custom-shader = ./shaders/cursor_smear.glsl
 
 # Config syntax crash course
 # ==========================
