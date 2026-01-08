@@ -18,6 +18,7 @@ fi
 
 # for doom emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
 # For node packages
 export PATH=~/.npm-global/bin:$PATH
