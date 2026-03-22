@@ -451,10 +451,15 @@ tmux_conf_uninstall_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'omerxx/tmux-sessionx'
 #set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
+
+# I recommend using `o` if not already in use, for least key strokes when launching
+unbind s
+set -g @sessionx-bind 's'
 
 
 # -- custom variables ----------------------------------------------------------

@@ -17,10 +17,11 @@
 
 confirm-close-surface = false
 theme = Catppuccin Macchiato
-background-opacity = 0.85
-font-family = JetBrainsMono
-
-custom-shader = ./shaders/cursor_smear.glsl
+#background-opacity = 0.85
+font-family = JetBrains Mono
+font-family-italic = Victor Mono
+font-size = 11
+#custom-shader = ./shaders/cursor_smear_fade.glsl
 
 # Config syntax crash course
 # ==========================

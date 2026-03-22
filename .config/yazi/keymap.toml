@@ -9,3 +9,8 @@ append_keymap = [
   { on = [ "<A-n>" ], run = ''' shell 'dragon-drop -i -T -k -a "$@"' --confirm ''', desc = "Drag and drop files" },
   { on = [ "<A-w>" ], run = "shell --confirm 'swww img '$1' --transition-type=grow --transition-fps=60 --transition-pos=right'", desc = "Change the wallpaper"},
 ]
+
+[[mgr.prepend_keymap]]
+on = [ "g", "w" ]
+run = 'cd "~/dev"'
+desc = "Change directory to ~/dev"
