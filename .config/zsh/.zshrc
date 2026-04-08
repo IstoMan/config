@@ -54,6 +54,8 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zmodload zsh/complist
 compinit
 
+command -v bun >/dev/null && source <(bun completions zsh)
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -119,5 +121,3 @@ zinit light Aloxaf/fzf-tab
 
 eval "$(zoxide init --cmd cd zsh)"
 
-# bun completions
-[ -s "/home/chad/.bun/_bun" ] && source "/home/chad/.bun/_bun"

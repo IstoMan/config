@@ -1,9 +1,0 @@
-.config/zsh/.histfile
-.config/zsh/.zcompdump
-.config/zsh/.zcompdump
-.config/tmux/plugins
-/.config/mpd/database
-/.config/mpd/state
-/.config/ncmpcpp/lyrics
-/.config/ncmpcpp/previews
-/.config/ncmpcpp/error.log

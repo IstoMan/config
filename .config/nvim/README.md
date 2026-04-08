@@ -1,19 +1,4 @@
-# Neovim
+# 💤 LazyVim
 
-Neovim is a hyper-extensible Vim-based text editor.
-
-## Dependencies
-
-This configuration uses LazyVim. To use this configuration, you'll need to install:
-- `neovim`
-- `git`
-- A Nerd Font
-
-### Arch Linux Installation
-```bash
-sudo pacman -S neovim git
-```
-
-## Tips
-- You can add new plugins in the `lua/plugins` directory.
-- You can customize keymaps in `lua/config/keymaps.lua`.
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
