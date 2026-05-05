@@ -1,8 +1,8 @@
 export XDG_CONFIG_HOME="/home/$USER/.config"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export BROWSER='xdg-open'
 export MANPAGER='nvim +Man!'
-export BROWSER='helium-browser'
 export HISTCONTROL=ignoreboth
 export QT_QPA_PLATFORMTHEME=qt5ct
 export FZF_DEFAULT_COMMAND='fd --strip-cwd-prefix --hidden --follow --exclude .git'
@@ -10,5 +10,6 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export BUN_INSTALL="$HOME/.bun" 
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
-export PATH="$PATH":"$HOME/fvm/default/bin"
+export PATH="$PATH":"$HOME/fvm/bin"
 export PATH="$PATH":"$HOME/.cargo/bin/"
+. "$HOME/.cargo/env"

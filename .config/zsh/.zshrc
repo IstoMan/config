@@ -26,7 +26,7 @@ export PATH=~/.npm-global/bin:$PATH
 if [ ! -d $XDG_CONFIG_HOME/oh-my-posh ] 
 then
 	mkdir -p $XDG_CONFIG_HOME/oh-my-posh
- 	wget https://raw.githubusercontent.com/maxstolly/catppuccin.omp/main/mocha.omp.json -P ~/.config/oh-my-posh
+ 	wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json -P ~/.config/oh-my-posh
 fi
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/mocha.omp.json)"
 
@@ -111,13 +111,28 @@ bindkey -s '^f' 'y\n'
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
 
-zinit cdreplay -q
-
 # Zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit cdreplay -q
 
 eval "$(zoxide init --cmd cd zsh)"
 
+
+# pnpm
+export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Ensure pnpm's completion function is registered with zsh.
+if command -v pnpm >/dev/null 2>&1; then
+  eval "$(pnpm completion zsh)"
+fi
+# pnpm end
+
+# bun completions
+[ -s "/home/chad/.bun/_bun" ] && source "/home/chad/.bun/_bun"
