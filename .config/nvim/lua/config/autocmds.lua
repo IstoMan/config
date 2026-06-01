@@ -117,3 +117,22 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd.startinsert()
   end,
 })
+
+-- LSP: register buffer-local mappings only after a language server attaches.
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = augroup,
+  desc = "Attach LSP navigation and code action keymaps",
+  callback = function(event)
+    local buf = event.buf
+    local map = function(lhs, rhs, desc)
+      vim.keymap.set("n", lhs, rhs, { buffer = buf, desc = desc, silent = true })
+    end
+
+    map("gd", vim.lsp.buf.definition, "Go to definition")
+    map("gr", vim.lsp.buf.references, "Go to references")
+    map("gi", vim.lsp.buf.implementation, "Go to implementation")
+    map("K", vim.lsp.buf.hover, "Hover documentation")
+    map("<leader>la", vim.lsp.buf.code_action, "Code actions")
+    map("<leader>lr", vim.lsp.buf.rename, "Rename symbol")
+  end,
+})

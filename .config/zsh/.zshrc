@@ -7,22 +7,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load color
 
-# To make scripting easy
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
-
-# for doom emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
-
-# For node packages
-export PATH=~/.npm-global/bin:$PATH
-
 if [ ! -d $XDG_CONFIG_HOME/oh-my-posh ] 
 then
 	mkdir -p $XDG_CONFIG_HOME/oh-my-posh

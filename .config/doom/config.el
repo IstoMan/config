@@ -24,9 +24,9 @@
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
-(setq doom-font (font-spec :family "Input Mono" :size 15)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-variable-pitch-font (font-spec :family "Inter" :size 15)
-      doom-big-font (font-spec :family "Input Mono" :size 24))
+      doom-big-font (font-spec :family "JetBrains Mono" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -57,8 +57,8 @@
             evil-visual-state-map
             evil-insert-state-map))
 
-(set-frame-parameter (selected-frame) 'alpha-background 85)
-(add-to-list 'default-frame-alist '(alpha-background . 85))
+;; (set-frame-parameter (selected-frame) 'alpha-background 85)
+;; (add-to-list 'default-frame-alist '(alpha-background . 85))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.

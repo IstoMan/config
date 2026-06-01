@@ -14,6 +14,12 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
 -- Files: fast access to common save, quit, search, and selection commands.
 map("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight", silent = true })
 map("n", "<leader>a", "ggVG", { desc = "Select all", silent = true })
+map("n", "<leader>lf", function()
+  require("conform").format({ async = true, lsp_format = "fallback" })
+end, { desc = "Format buffer", silent = true })
+map("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Line diagnostics", silent = true })
+map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic", silent = true })
+map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic", silent = true })
 
 -- Buffers: move between open files and clean up buffer lists.
 map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer", silent = true })

@@ -16,7 +16,16 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.surround" },
   { src = "https://github.com/nvim-mini/mini.ai" },
   { src = "https://github.com/jake-stewart/multicursor.nvim", version = "1.0" },
-})
+  { src = "https://github.com/mason-org/mason.nvim" },
+  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+  { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/stevearc/conform.nvim" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/Saghen/blink.cmp", version = "v1" },
+  { src = "https://github.com/L3MON4D3/LuaSnip" },
+  { src = "https://github.com/rafamadriz/friendly-snippets" },
+}, { load = true })
 
 local function build_fzf_native()
   local plugin_dir = vim.fn.stdpath("data") .. "/site/pack/core/opt/telescope-fzf-native.nvim"
@@ -142,5 +151,127 @@ require("mini.surround").setup({
 })
 
 require("mini.ai").setup()
+
+require("mason").setup({})
+
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "gopls",
+    "ts_ls",
+    "html",
+    "cssls",
+    "jsonls",
+    "emmet_language_server",
+    "clangd",
+    "pyright",
+    "lua_ls",
+  },
+})
+
+require("mason-tool-installer").setup({
+  ensure_installed = {
+    "stylua",
+    "goimports",
+    "gofumpt",
+    "isort",
+    "black",
+    "clang-format",
+    "prettierd",
+    "prettier",
+  },
+  run_on_start = true,
+  start_delay = 3000,
+})
+
+require("nvim-treesitter").setup({
+  ensure_installed = {
+    "go",
+    "javascript",
+    "typescript",
+    "tsx",
+    "html",
+    "css",
+    "json",
+    "c",
+    "cpp",
+    "python",
+    "lua",
+  },
+  auto_install = true,
+  highlight = { enable = true },
+  indent = { enable = true },
+})
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
+require("blink.cmp").setup({
+  snippets = { preset = "luasnip" },
+  completion = {
+    documentation = { auto_show = true },
+    menu = { auto_show = true },
+  },
+  keymap = {
+    preset = "default",
+    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+    ["<CR>"] = { "accept", "fallback" },
+    ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+    ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+  },
+  sources = {
+    default = { "lsp", "path", "snippets", "buffer" },
+  },
+})
+
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+vim.lsp.config("lua_ls", {
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } },
+      runtime = { version = "LuaJIT" },
+      workspace = {
+        checkThirdParty = false,
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = { enable = false },
+    },
+  },
+})
+
+for _, server in ipairs({
+  "gopls",
+  "ts_ls",
+  "html",
+  "cssls",
+  "jsonls",
+  "emmet_language_server",
+  "clangd",
+  "pyright",
+}) do
+  vim.lsp.config(server, { capabilities = capabilities })
+end
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    go = { "goimports", "gofumpt" },
+    python = { "isort", "black" },
+    javascript = { "prettierd", "prettier", stop_after_first = true },
+    javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+    typescript = { "prettierd", "prettier", stop_after_first = true },
+    typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+    tsx = { "prettierd", "prettier", stop_after_first = true },
+    css = { "prettierd", "prettier", stop_after_first = true },
+    html = { "prettierd", "prettier", stop_after_first = true },
+    json = { "prettierd", "prettier", stop_after_first = true },
+    c = { "clang_format" },
+    cpp = { "clang_format" },
+  },
+  format_on_save = {
+    timeout_ms = 500,
+    lsp_format = "fallback",
+  },
+})
 
 require("config.multicursor")
