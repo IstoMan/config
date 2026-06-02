@@ -136,3 +136,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>lr", vim.lsp.buf.rename, "Rename symbol")
   end,
 })
+
+-- Treesitter (nvim-treesitter main branch): explicitly start TS highlighting per filetype.
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = "*",
+  desc = "Start Treesitter highlighting when parser exists",
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
